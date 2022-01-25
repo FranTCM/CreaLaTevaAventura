@@ -1,0 +1,20 @@
+.Text {color:black;
+  background-color:coral;  
+width: 510px;
+height: 150px;
+justify-content: center;}
+
+.Pagina {justify-content: flex-end;}
+
+
+/*
+p { color: blue}
+h1 {
+    text-align: left ;
+    color: black ;
+   }
+.Titol {
+    background-color:orangered;
+  }
+*/
+

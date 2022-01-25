@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>La teva aventura</title>
+    <style>
+        body {
+            background-color: wheat;
+            max-width: 30em;
+            margin: 0 auto;
+            height: 700px;
+            background-image: url("https://thumbs.dreamstime.com/b/libro-abierto-9030941.jpg");
+            background-position-x:center;
+            background-position-y:center;
+            background-repeat:no-repeat;
+            background-size: cover;
+        }
+
+        header {
+            background-color: yellowgreen;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+        }
+        .text {
+            background-color: coral;
+            padding: 2em;
+            margin-bottom: 2em;
+            font-size: x-large;
+        }
+
+        .boton {
+            color: wheat;
+            background-color: gray;
+            font-size: x-large;
+            width: 10%;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>LA CAPUTXETA VERMELLA</h1>
+        <h2>Benvingut a la teva aventura, llegeix i gaudeix!</h2>
+    </header>
+
+    <main>
+        <header>
+            <b class="pag"></b>
+        </header>
+        <section class="text"></section>
+        <footer>
+            <button class="boton" onclick="ferSi()">Sí</button>
+            <button class="boton" onclick="ferNo()">No</button>
+        </footer>
+    </main>
+
+    <script>
+        let historia = [
+            { text: "Fa molts i molts anys hi havia una nena que es deia Caputxeta Vermella. Un dia, la Caputxeta va sortir de casa a portar-li a la seva avia un cistell de menjar. De cop i volta es va trobar amb un llop. Vols parlar amb el llop?", si: 2, no: 1 },
+            { text: "El llop s'enfada amb tu per maleducada i et menja. EL JOC HA FINALITZAT.", si: 10, no: 10 },
+            { text: "El llop t'ofereix anar a casa de l'avia muntat en ell. Vas amb ell?.", si: 4, no: 3 },
+            { text: "El llop s'enfada amb tu per antipàtica i et menja. EL JOC HA FINALITZAT.", si: 10, no: 10 },
+            { text: "Arribeu a casa de l'àvia. El llop et pregunta si li deixes entrar a casa de l'àvia.", si: 6, no: 5 },
+            { text: "El llop s'enfada amb tu per desconfiada i et menja. EL JOC HA FINALITZAT.", si: 10, no: 10 },
+            { text: "L'àvia, el llop i tu bereneu junts. FELICITATS, HAS GUANYAT EL JOC", si: 10, no: 10 }
+        ]
+        let pagina = 0;
+        let text = document.querySelector('.text');
+        let pag = document.querySelector('.pag');
+        text.textContent = historia[pagina].text;
+        pag.textContent = "Pàgina: " + pagina;
+
+        function ferSi() {
+            pagina = historia[pagina].si;
+            text.textContent = historia[pagina].text;
+            pag.textContent = "Pàgina: " + pagina;
+        }
+        function ferNo() {
+            pagina = historia[pagina].no;
+            text.textContent = historia[pagina].text;
+            pag.textContent = "Pàgina: " + pagina;
+        }
+
+    </script>
+
+</body>
+
+</html>
